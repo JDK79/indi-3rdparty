@@ -1875,6 +1875,9 @@ bool ToupBase::saveConfigItems(FILE * fp)
     if (m_Instance->model->flag & CP(FLAG_HEAT))
         IUSaveConfigSwitch(fp, &m_HeatSP);
 
+    if (m_Instance->model->flag & (CP(FLAG_CG) | CP(FLAG_CGHDR)))
+        IUSaveConfigSwitch(fp, &m_GainConversionSP);
+
     return true;
 }
 
