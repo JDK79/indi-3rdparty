@@ -1878,6 +1878,9 @@ bool ToupBase::saveConfigItems(FILE * fp)
     if (m_Instance->model->flag & (CP(FLAG_CG) | CP(FLAG_CGHDR)))
         IUSaveConfigSwitch(fp, &m_GainConversionSP);
 
+    if (m_SupportTailLight)
+        IUSaveConfigSwitch(fp, &m_TailLightSP);
+
     return true;
 }
 
